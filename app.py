@@ -123,7 +123,7 @@ st.sidebar.markdown("<h3 style='color:#FFFFFF;'>🛠️ Input Parameters</h3>", 
 
 fleet_size = st.sidebar.number_input("Fleet Size", min_value=1, value=10, step=1)
 fuel_price = st.sidebar.number_input("Fuel Price ($/MT)", min_value=1.0, value=550.0)
-daily_consumption = st.sidebar.number_input("Daily Fuel Consumption (MT)", min_value=1.0, value=50.0)
+daily_consumption = st.sidebar.number_input("Daily Avg Fuel Consumption per Vessel (MT)", min_value=1.0, value=50.0)
 operating_days = st.sidebar.number_input("Operating Days", min_value=1, value=330, step=1)
 
 # ----------------- Customizable Applications -------------------
@@ -131,12 +131,12 @@ st.sidebar.markdown("<h3 style='color:#FFFFFF;'>📋 Application Settings</h3>",
 
 # Define applications with their respective ranges and default values
 applications = {
-    "Hull & Performance": {"min": 0.0, "max": 8.0, "default": 3.0, "icon": "🛥️", "default_license": 150},
-    "Voyage Optimization": {"min": 0.0, "max": 6.0, "default": 2.0, "icon": "🧭", "default_license": 100},
-    "Emission App": {"min": 0.0, "max": 5.0, "default": 1.5, "icon": "🌿", "default_license": 75},
-    "Vessel Scorecard": {"min": 0.0, "max": 5.0, "default": 1.0, "icon": "📊", "default_license": 75},
-    "Weather Routing": {"min": 0.0, "max": 4.0, "default": 0.0, "icon": "☁️", "default_license": 50},
-    "Fuel Efficiency": {"min": 0.0, "max": 7.0, "default": 0.0, "icon": "⛽", "default_license": 50}
+    "Hull Maintainance App": {"min": 0.0, "max": 8.0, "default": 3.0, "icon": "🛥️", "default_license": 150},
+    "Voyage Optimization App": {"min": 0.0, "max": 6.0, "default": 1.0, "icon": "🧭", "default_license": 200},
+    "Emission App": {"min": 0.0, "max": 5.0, "default": 0.5, "icon": "🌿", "default_license": 75},
+    "Performance App": {"min": 0.0, "max": 8.0, "default": 0.5, "icon": "📊", "default_license": 75},
+    "Vessel Scorecard": {"min": 0.0, "max": 5.0, "default": 0.5, "icon": "☁️", "default_license": 50},
+    "Propulsion Pro": {"min": 0.0, "max": 5.0, "default": 0.2, "icon": "⛽", "default_license": 50}
 }
 
 # Store selected applications, their saving percentages, and license costs
