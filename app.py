@@ -18,45 +18,45 @@ custom_css = """
 <style>
     /* Main Background and Text */
     [data-testid="stAppViewContainer"] {
-        background-color: #1E2637;
-        color: #E0E0E0;
+        background-color: #F8F9FA;
+        color: #4A4A4A;
     }
 
     /* Sidebar styling */
     [data-testid="stSidebar"] {
-        background-color: #141823;
+        background-color: #FFFFFF;
         padding-top: 1rem;
     }
 
     /* Headers */
     h1, h2, h3, h4, h5, h6 {
-        color: #FFFFFF;
+        color: #212529;
         font-family: 'Arial', sans-serif;
         font-weight: 600;
     }
 
     /* Metric cards */
     [data-testid="stMetric"] {
-        background-color: #242E42;
+        background-color: #FFFFFF;
         border-radius: 8px;
         padding: 15px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     
     [data-testid="stMetricLabel"] {
-        color: #B0B9C5;
+        color: #6C757D;
         font-size: 1rem !important;
     }
     
     [data-testid="stMetricValue"] {
-        color: #FFFFFF;
+        color: #212529;
         font-size: 1.5rem !important;
         font-weight: bold;
     }
 
     /* Cards */
     .css-1r6slb0 {
-        background-color: #242E42;
+        background-color: #FFFFFF;
         border-radius: 10px;
         padding: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -64,29 +64,29 @@ custom_css = """
 
     /* Checkbox color */
     [data-testid="stCheckbox"] {
-        color: #61DAFB;
+        color: #00C897;
     }
 
     /* Chart backgrounds */
     .js-plotly-plot {
-        background-color: #242E42;
+        background-color: #FFFFFF;
         border-radius: 8px;
     }
 
     /* Button styling */
     button[kind="primary"] {
-        background-color: #0085FF;
+        background-color: #00B2FF;
         border-radius: 4px;
     }
 
     /* Divider lines */
     hr {
-        border-color: #373F51;
+        border-color: #DEE2E6;
     }
     
     /* Card container */
     .card-container {
-        background-color: #242E42;
+        background-color: #FFFFFF;
         border-radius: 8px;
         padding: 16px;
         margin: 10px 0;
@@ -95,16 +95,16 @@ custom_css = """
     
     /* Application selection panel */
     .app-selection-panel {
-        background-color: #1D2533;
+        background-color: #F1F3F5;
         border-radius: 8px;
         padding: 16px;
         margin: 10px 0;
-        border-left: 3px solid #0085FF;
+        border-left: 3px solid #00B2FF;
     }
     
     /* Slider color */
     .stSlider > div > div > div {
-        background-color: #0085FF !important;
+        background-color: #00B2FF !important;
     }
 </style>
 """
@@ -119,7 +119,7 @@ with col_title_right:
     view_3_years = st.checkbox("View 3-Year ROI", value=False)
 
 # ----------------- Sidebar Inputs -------------------
-st.sidebar.markdown("<h3 style='color:#FFFFFF;'>🛠️ Input Parameters</h3>", unsafe_allow_html=True)
+st.sidebar.markdown("<h3 style='color:#212529;'>🛠️ Input Parameters</h3>", unsafe_allow_html=True)
 
 fleet_size = st.sidebar.number_input("Fleet Size", min_value=1, value=10, step=1)
 fuel_price = st.sidebar.number_input("Fuel Price ($/MT)", min_value=1.0, value=550.0)
@@ -127,7 +127,7 @@ daily_consumption = st.sidebar.number_input("Daily Avg Fuel Consumption per Vess
 operating_days = st.sidebar.number_input("Operating Days", min_value=1, value=330, step=1)
 
 # ----------------- Customizable Applications -------------------
-st.sidebar.markdown("<h3 style='color:#FFFFFF;'>📋 Application Settings</h3>", unsafe_allow_html=True)
+st.sidebar.markdown("<h3 style='color:#212529;'>📋 Application Settings</h3>", unsafe_allow_html=True)
 
 # Define applications with their respective ranges and default values
 applications = {
@@ -340,9 +340,9 @@ with viz_col1:
         )
         
         fig.update_layout(
-            plot_bgcolor="#242E42",
-            paper_bgcolor="#242E42",
-            font=dict(color="#FFFFFF"),
+            plot_bgcolor="#FFFFFF",
+            paper_bgcolor="#FFFFFF",
+            font=dict(color="#212529"),
             xaxis=dict(title="", tickangle=-45),
             margin=dict(l=20, r=20, t=20, b=20),
             height=400
@@ -372,9 +372,9 @@ with viz_col2:
         )
         
         fig2.update_layout(
-            plot_bgcolor="#242E42",
-            paper_bgcolor="#242E42",
-            font=dict(color="#FFFFFF"),
+            plot_bgcolor="#FFFFFF",
+            paper_bgcolor="#FFFFFF",
+            font=dict(color="#212529"),
             legend=dict(orientation="h", yanchor="bottom", y=-0.3, xanchor="center", x=0.5),
             margin=dict(l=20, r=20, t=20, b=20),
             height=400
@@ -416,9 +416,9 @@ if filtered_app_licenses:
     )
     
     fig_license.update_layout(
-        plot_bgcolor="#242E42",
-        paper_bgcolor="#242E42",
-        font=dict(color="#FFFFFF"),
+        plot_bgcolor="#FFFFFF",
+        paper_bgcolor="#FFFFFF",
+        font=dict(color="#212529"),
         xaxis=dict(title="", tickangle=-45),
         margin=dict(l=20, r=20, t=20, b=20),
         height=300
@@ -445,7 +445,7 @@ if view_3_years:
             x=years,
             y=cumulative_savings,
             name="Cumulative Savings ($)",
-            marker_color="#0085FF",
+            marker_color="#00B2FF",
             opacity=0.7
         ),
         secondary_y=False
@@ -480,9 +480,9 @@ if view_3_years:
     # Update layout
     fig3.update_layout(
         title="Year-on-Year Performance",
-        plot_bgcolor="#242E42",
-        paper_bgcolor="#242E42",
-        font=dict(color="#FFFFFF"),
+        plot_bgcolor="#FFFFFF",
+        paper_bgcolor="#FFFFFF",
+        font=dict(color="#212529"),
         legend=dict(orientation="h", yanchor="bottom", y=-0.3, xanchor="center", x=0.5),
         margin=dict(l=20, r=20, t=50, b=50),
         height=450,
@@ -494,7 +494,7 @@ if view_3_years:
     )
     
     # Set y-axes titles
-    fig3.update_yaxes(title_text="Cumulative Savings ($)", secondary_y=False, color="#0085FF")
+    fig3.update_yaxes(title_text="Cumulative Savings ($)", secondary_y=False, color="#00B2FF")
     fig3.update_yaxes(title_text="ROI (%) / Fuel Saved (K MT)", secondary_y=True, color="#FF5733")
     
     st.plotly_chart(fig3, use_container_width=True)
