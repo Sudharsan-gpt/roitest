@@ -18,7 +18,7 @@ custom_css = """
 <style>
     /* Main Background and Text */
     [data-testid="stAppViewContainer"] {
-        background-color: #ebeced;
+        background-color: #ebf5ff;
         color: #4A4A4A;
     }
 
