@@ -104,7 +104,7 @@ custom_css = """
     
     /* Slider color */
     .stSlider > div > div > div {
-        background-color: #00B2FF !important;
+        background-color: #c2cfce !important;
     }
 </style>
 """
